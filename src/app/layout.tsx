@@ -6,7 +6,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "My Herbarium",
+  title: "Your Herbarium",
 };
 
 export default function RootLayout({
