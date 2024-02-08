@@ -24,23 +24,21 @@ export const FlowerCard: FC<FlowerCardProps> = ({
   }, [src]);
 
   return (
-    <article className="h-[136px] w-full pl-6 flex justify-center items-center">
-      <div className="grow flex flex-col items-start gap-3 overflow-hidden">
-        <h2 className="truncate max-w-full">{name}</h2>
-        <div className="flex gap-1">
-          <Indicator
-            icon={<TemperatureIcon className="shrink-0" />}
-            value={temperature}
-            unit="°C"
-            color={color}
-          />
-          <Indicator
-            icon={<HumidityIcon className="shrink-0" />}
-            value={humidity}
-            unit="%"
-            color={color}
-          />
-        </div>
+    <article className="relative isolate h-[136px] w-full pl-6 flex flex-col justify-center items-start gap-3 overflow-hidden">
+      <h2 className="truncate max-w-full">{name}</h2>
+      <div className="flex gap-1">
+        <Indicator
+          icon={<TemperatureIcon className="shrink-0" />}
+          value={temperature}
+          unit="°C"
+          color={color}
+        />
+        <Indicator
+          icon={<HumidityIcon className="shrink-0" />}
+          value={humidity}
+          unit="%"
+          color={color}
+        />
       </div>
       {!imgFailed && (
         <Image
@@ -48,7 +46,7 @@ export const FlowerCard: FC<FlowerCardProps> = ({
           src={src}
           width={136}
           height={136}
-          className="shrink-0"
+          className="absolute right-0 -z-10"
           onError={() => setImgFailed(true)}
         />
       )}
