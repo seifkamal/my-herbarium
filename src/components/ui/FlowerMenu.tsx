@@ -24,7 +24,7 @@ export const FlowerMenu: FC<FlowerMenuProps> = ({
 }) => (
   <div
     className={cn(
-      "h-32 px-6 rounded-b-2xl relative flex flex-col justify-center after:absolute after:pointer-events-none after:inset-0 after:rounded-inherit after:bg-light/20 dark:text-light dark:after:bg-transparent",
+      "isolate h-32 px-6 rounded-b-2xl relative flex flex-col justify-center after:absolute after:pointer-events-none after:inset-0 after:-z-10 after:rounded-inherit after:bg-light/20 dark:text-light dark:after:bg-transparent",
       color === "pink" &&
         "text-pink-dark bg-pink-extraLight dark:bg-pink-medium",
       color === "blue" &&
@@ -44,8 +44,8 @@ export const FlowerMenu: FC<FlowerMenuProps> = ({
           defaultValue={defaultTemperature}
           color={color}
           onValueChange={onTemperatureChange}
-          iconLeft={<SunSlashIcon />}
-          iconRight={<SunIcon />}
+          iconLeft={<SunSlashIcon className="shrink-0" />}
+          iconRight={<SunIcon className="shrink-0" />}
           aria-label="Temperature"
         />
         <Slider
@@ -55,8 +55,8 @@ export const FlowerMenu: FC<FlowerMenuProps> = ({
           defaultValue={defaultHumidity}
           color={color}
           onValueChange={onHumidityChange}
-          iconLeft={<WaterSlashIcon />}
-          iconRight={<WaterIcon />}
+          iconLeft={<WaterSlashIcon className="shrink-0" />}
+          iconRight={<WaterIcon className="shrink-0" />}
           aria-label="Humidity"
         />
       </div>
